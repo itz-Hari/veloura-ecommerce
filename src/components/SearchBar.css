@@ -1,0 +1,140 @@
+.search {
+  position: relative;
+  width: 100%;
+}
+
+.search__form {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search__icon {
+  position: absolute;
+  left: 1rem;
+  color: var(--ink-soft);
+  pointer-events: none;
+}
+
+.search__input {
+  width: 100%;
+  min-height: 46px;
+  padding: 0.6rem 2.6rem;
+  font-size: 0.92rem;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.search__input:focus {
+  outline: none;
+  background: #fff;
+  border-color: var(--glass-blue);
+  box-shadow: 0 0 0 3px rgba(74, 112, 150, 0.18);
+}
+
+.search__clear {
+  position: absolute;
+  right: 0.6rem;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: var(--ink-soft);
+}
+
+.search__clear:hover {
+  background: var(--sand);
+}
+
+.search__panel {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  right: 0;
+  z-index: 60;
+  padding: 0.5rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lift);
+  animation: panel-in 0.2s var(--ease);
+}
+
+.search__item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+  padding: 0.5rem;
+  text-align: left;
+  border-radius: 10px;
+}
+
+.search__item:hover,
+.search__item:focus-visible {
+  background: var(--cream);
+}
+
+.search__thumb {
+  flex: none;
+  width: 46px;
+  height: 56px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.search__meta {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.3;
+}
+
+.search__meta strong {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.search__meta small {
+  color: var(--ink-soft);
+}
+
+.search__price {
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.search__all {
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.7rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--glass-blue-deep);
+  border-top: 1px solid var(--line);
+}
+
+.search__all:hover {
+  background: var(--cream);
+}
+
+.search__none {
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+@keyframes panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

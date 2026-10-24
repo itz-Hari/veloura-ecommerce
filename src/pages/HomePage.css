@@ -1,0 +1,32 @@
+.home__perks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding-block: 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.home__perks li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.home__perks svg {
+  flex: none;
+  color: var(--sage-deep);
+}
+
+@media (max-width: 760px) {
+  .home__perks {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+
+  .home__perks li {
+    justify-content: flex-start;
+  }
+}

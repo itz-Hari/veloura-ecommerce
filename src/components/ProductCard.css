@@ -1,0 +1,160 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.product-card__media {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background: var(--sand);
+  border-radius: var(--radius);
+}
+
+.product-card__image-btn {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.product-card__image-btn img {
+  transition: transform 0.9s var(--ease);
+}
+
+.product-card:hover .product-card__image-btn img {
+  transform: scale(1.06);
+}
+
+.product-card__tag {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  background: rgba(250, 246, 238, 0.9);
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.product-card__wish {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  color: var(--charcoal);
+  background: rgba(250, 246, 238, 0.92);
+  border-radius: 50%;
+  transition: transform 0.25s var(--ease), color 0.2s;
+}
+
+.product-card__wish:hover {
+  transform: scale(1.1);
+}
+
+.product-card__wish.is-saved {
+  color: var(--clay-deep);
+}
+
+/* Quick add slides up on hover (desktop) and is always visible on touch screens. */
+.product-card__quick {
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 44px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, rgba(88, 130, 170, 0.92), rgba(46, 80, 115, 0.94));
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.product-card:hover .product-card__quick,
+.product-card__quick:focus-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (hover: none) {
+  .product-card__quick {
+    opacity: 1;
+    transform: none;
+    min-height: 40px;
+  }
+}
+
+.product-card__category {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.product-card__name {
+  margin-top: 0.15rem;
+  font-size: 1.3rem;
+}
+
+.product-card__name button {
+  text-align: left;
+}
+
+.product-card__name button:hover {
+  color: var(--glass-blue-deep);
+}
+
+.product-card__rating {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.25rem;
+  font-size: 0.82rem;
+  color: var(--clay-deep);
+}
+
+.product-card__rating small {
+  color: var(--ink-soft);
+}
+
+.product-card__price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.2rem 0.6rem;
+  margin-top: 0.3rem;
+}
+
+.product-card__price s {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.product-card__off {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--sage-deep);
+}
+
+@media (max-width: 720px) {
+  .product-card__name {
+    font-size: 1.1rem;
+  }
+}

@@ -1,0 +1,27 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--charcoal);
+}
+
+.logo--light {
+  color: var(--ivory);
+}
+
+.logo__mark {
+  width: 34px;
+  height: 34px;
+  transition: transform 0.5s var(--ease);
+}
+
+.logo:hover .logo__mark {
+  transform: rotate(-8deg) scale(1.06);
+}
+
+.logo__word {
+  font-family: var(--font-serif);
+  font-size: 1.7rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+}

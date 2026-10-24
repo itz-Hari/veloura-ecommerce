@@ -1,0 +1,26 @@
+.announcement {
+  padding: 0.55rem var(--gutter);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: var(--ivory);
+  background: var(--charcoal);
+}
+
+.announcement button {
+  margin-left: 0.75rem;
+  font-weight: 600;
+  color: var(--clay-soft);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.announcement button:hover {
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .announcement {
+    font-size: 0.74rem;
+  }
+}

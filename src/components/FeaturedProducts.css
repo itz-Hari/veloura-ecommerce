@@ -1,0 +1,18 @@
+.featured--tinted {
+  background: var(--cream);
+}
+
+.featured__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.featured__head p {
+  max-width: 480px;
+  margin-top: 0.75rem;
+  color: var(--ink-soft);
+}

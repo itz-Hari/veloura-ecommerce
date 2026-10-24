@@ -1,0 +1,251 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 246, 238, 0.88);
+  border-bottom: 1px solid var(--line);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  min-height: var(--header-height);
+}
+
+.header__nav {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.header__search {
+  flex: 1;
+  max-width: 340px;
+  margin-left: auto;
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.header__menu-btn,
+.header__search-btn {
+  display: none;
+}
+
+.icon-btn {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  transition: background 0.2s, transform 0.2s var(--ease);
+}
+
+.icon-btn:hover {
+  background: var(--sand);
+  transform: translateY(-1px);
+}
+
+.badge {
+  position: absolute;
+  top: 3px;
+  right: 2px;
+  min-width: 18px;
+  height: 18px;
+  padding-inline: 4px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+  color: #fff;
+  background: var(--sage-deep);
+  border-radius: 999px;
+}
+
+.badge--clay {
+  background: var(--clay-deep);
+}
+
+/* ---------- Desktop navigation ---------- */
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  position: relative;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0.8rem;
+  right: 0.8rem;
+  bottom: 0.25rem;
+  height: 1px;
+  background: var(--charcoal);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s var(--ease);
+}
+
+.nav-link:hover::after,
+.nav-link.is-active::after {
+  transform: scaleX(1);
+}
+
+.nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 190px;
+  padding: 0.5rem;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(8px);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lift);
+  transition: opacity 0.2s, transform 0.2s var(--ease), visibility 0.2s;
+}
+
+.nav-item--has-menu:hover .nav-dropdown,
+.nav-item--has-menu:focus-within .nav-dropdown {
+  visibility: visible;
+  opacity: 1;
+  transform: none;
+}
+
+.nav-dropdown button {
+  padding: 0.6rem 0.9rem;
+  font-size: 0.9rem;
+  text-align: left;
+  border-radius: 8px;
+}
+
+.nav-dropdown button:hover {
+  background: var(--cream);
+}
+
+.header__mobile-search {
+  padding-bottom: 0.8rem;
+}
+
+/* ---------- Mobile menu ---------- */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+}
+
+.mobile-menu__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(38, 37, 42, 0.5);
+  animation: fade-in 0.25s;
+}
+
+.mobile-menu__panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: min(86vw, 340px);
+  padding: 1rem 1.25rem 1.5rem;
+  overflow-y: auto;
+  background: var(--ivory);
+  animation: slide-left 0.3s var(--ease);
+}
+
+.mobile-menu__panel nav {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.mobile-menu__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-menu__link {
+  min-height: 52px;
+  font-family: var(--font-serif);
+  font-size: 1.7rem;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+
+.mobile-menu__heading {
+  margin-top: 1.25rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--clay-deep);
+}
+
+.mobile-menu__sub {
+  min-height: 46px;
+  text-align: left;
+  color: var(--ink-soft);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes slide-left {
+  from {
+    transform: translateX(-100%);
+  }
+}
+
+@media (max-width: 1080px) {
+  .header__nav,
+  .header__search {
+    display: none;
+  }
+
+  .header__menu-btn,
+  .header__search-btn {
+    display: grid;
+  }
+
+  .header__inner {
+    gap: 0.5rem;
+  }
+
+  .header__actions {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo__word {
+    font-size: 1.35rem;
+    letter-spacing: 0.2em;
+  }
+
+  .icon-btn {
+    width: 40px;
+  }
+}
