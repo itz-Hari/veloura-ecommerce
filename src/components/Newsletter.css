@@ -90,6 +90,36 @@
   min-height: 48px;
 }
 
+/* Newsletter email input — improve readability */
+.newsletter__form .field .input {
+  color: var(--charcoal);
+  background: var(--ivory);
+  border: 1px solid rgba(250, 246, 238, 0.35);
+  opacity: 1;
+}
+
+/* Placeholder text */
+.newsletter__form .field .input::placeholder {
+  color: #6b6862;
+  opacity: 1;
+}
+
+/* Text when typing */
+.newsletter__form .field .input:focus {
+  color: var(--charcoal);
+  background: #ffffff;
+  outline: 2px solid var(--clay-soft);
+  outline-offset: 2px;
+}
+
+/* Keep entered text readable */
+.newsletter__form .field .input:-webkit-autofill,
+.newsletter__form .field .input:-webkit-autofill:hover,
+.newsletter__form .field .input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--charcoal);
+}
+
+
 @media (max-width: 560px) {
   .newsletter__form .field {
     width: 100%;
